@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;900&display=swap');
+*{
+	margin:  0;
+	padding:  0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Poppins', sans-serif;
+	font-size:16px;
+}
+
+.site-header{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	font-weight: 500;
+	padding: 0 1em;
+	background: rgb(255,255,255);
+	/* background: linear-gradient(0deg, rgba(253,187,45,1)  0%, rgba(255,255,255,1) 100%); */
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+	box-shadow: 5px 5px 5px 0;
+}
+.site-header img{
+	height: 80px;
+	width: 80px;
+	border-radius: 50%;
+	margin: 0.5em 0;
+	border: 2px solid black;
+}
+.logo-desc{
+	display: flex;
+	flex-direction: row; 
+	align-items: center;
+	justify-content: center; 
+}
+
+.tagline{
+	display: flex;
+	flex-direction: column;
+	font-size: 0.75rem;
+	height: 100%;
+	position: relative;
+	margin-left: 0.75em;
+}
+.tagline h1{
+	font-weight: 500;
+}
+.tagline p{
+}
+
+.navbar li{
+	display: inline-block;
+	margin-left: 2em;
+}
+.navbar li a{
+	text-decoration: none;
+	color: black;
+	text-transform: uppercase;
+	padding-bottom: 0.5em;
+	transition: .15s linear;
+}
+.navbar{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.cta{
+	background-color: dodgerblue;
+	padding: 0.5em 1em;
+	border-radius: 30px;
+	transition: .25s ease-in-out;
+}
+li.cta a{
+	color: white;
+}
+.navbar li a:hover{
+	border-bottom: 5px solid black;
+}
+.cta:hover{
+	transform: translateY(-10px);
+	box-shadow: 5px 5px 5px 0px;
+}
+li.cta a:hover{
+	border: 0;
+}
+/* END OF HEADER */
+
+section{
+	display: flex;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+}
+
+.home-info{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background: rgb(255,255,255);
+	background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(253,187,45,1) 100%);
+	height: 100vh;
+}
+.home-info p{
+	padding:  1em;
+	width: 50%;
+}
+.home-info img{
+	height: 350px;
+	filter: drop-shadow(5px 5px);
+}
