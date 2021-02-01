@@ -8,7 +8,15 @@
 body{
 	font-family: 'Poppins', sans-serif;
 	font-size:16px;
+	overflow-x: hidden;
 }
+
+html{
+	scroll-behavior: smooth;
+}
+/*-----------------------------------------------------------------------------*/
+/* MOBILE FIRST */
+/*-----------------------------------------------------------------------------*/
 
 .site-header{
 	display: flex;
@@ -19,13 +27,13 @@ body{
 	padding: 0 1em;
 	position: fixed;
 	width: 100%;
+	background-color: rgba(253,187,45,1);
 	z-index: 999;
 	transition: all 0.3s; 
-/* 	box-shadow: 5px 5px 5px 0; */
 }
-.site-header img{
-	height: 80px;
-	width: 80px;
+.logo-desc img{
+	height: 70px;
+	width: 70px;
 	border-radius: 50%;
 	margin: 0.5em 0;
 	border: 2px solid black;
@@ -36,7 +44,6 @@ body{
 	align-items: center;
 	justify-content: center; 
 }
-
 .tagline{
 	display: flex;
 	flex-direction: column;
@@ -51,7 +58,140 @@ body{
 .tagline p:nth-child(1){
 	font-size: 1.25rem;
 }
+.navlinks{
+	font-size: 1.5em;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	height: 50vh;
+	width: 100%;
+	position: absolute;
 
+	height: 100vh; 
+	right: 0;
+	top: 11vh;
+	background:  linear-gradient(180deg, rgba(253,187,45,1)  0%, rgba(255,255,255,1) 100%);
+	/* background-color: rgba(253,187,45,1); */
+	transform: translateX(100%);
+	transition: transform 0.5s ease-in-out;
+}
+
+.navlinks li{
+
+}
+.navlinks a{
+	text-decoration: none;
+	color: black;
+	transition: font-size .2s ease-in-out;
+}
+
+.navlinks a:hover{
+	font-size: 1.5em;
+}
+ion-icon{	
+	display: block;
+	cursor: pointer;
+}
+
+.nav-active{
+	transform: translateX(0%);
+}
+.nav-active li{
+	opacity: 0;
+}
+
+@keyframes navLinkFade{
+	from {
+		opacity: 0;
+		transform: translateX(50px);
+	}
+	to{
+		opacity: 1;
+		transform:  translateX(0px);
+	}
+}
+/*-----------------------------------------------------------------------------*/
+/* END OF HEADER */
+/*-----------------------------------------------------------------------------*/
+
+section{
+	display: flex;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+}
+.home-page{
+	background-color: red;
+	overflow: hidden;
+}
+.home-info{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	padding-top: 5em;
+	background: rgb(255,255,255);
+	background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(253,187,45,1) 100%);
+	height: 100vh;
+}
+.home-info div{
+	padding: 0;
+	width: 50%;
+	padding-left: 0em;
+}
+.home-info h1{
+	margin: 1em 0;
+	font-size: 2rem;
+	font-weight: 500;
+/* 	-webkit-text-fill-color: white; Will override color (regardless of order)
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: black; */
+}
+.home-info div p{
+	line-height: 2em;
+	width: 100%;
+}
+.home-info img{
+	height: 400px;
+	filter: drop-shadow(5px 5px);
+}
+.faq{
+	background-color:;
+}
+
+
+/*-----------------------------------------------------------------------------*/
+/* DESKTOP AND HIGHER */
+/*-----------------------------------------------------------------------------*/
+
+
+@media (min-width: 1024px) {
+
+ion-icon{
+	display: none;
+}
+.navbar,
+.navbar li,
+.navbar li a,
+.tagline{
+	display: initial;
+}
+.navlinks{
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	position: relative;
+	top: 0;
+	width: auto;
+	height: auto;
+	font-size: 1em;
+	background: none;
+	transform: translateX(0);
+}
 .navbar li{
 	display: inline-block;
 	margin-left: 2em;
@@ -77,54 +217,18 @@ body{
 li.cta a{
 	color: white;
 }
-.navbar li a:hover{
+.navlinks a:hover{
 	border-bottom: 5px solid black;
 	color: #0029E6;
+	font-size: 1em;
+	background-color: transparent;
 }
 .cta:hover{
-	transform: translateY(-10px);
-	box-shadow: 0px 5px 5px 0px;
+	transform: translateY(10px);
+	box-shadow: 0px -5px 5px 0px;
 }
 li.cta a:hover{
 	border: 0;
 }
-
-/* END OF HEADER */
-
-section{
-	display: flex;
-	height: 100vh;
-	align-items: center;
-	justify-content: center;
-}
-
-.home-info{
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	padding-top: 5em;
-	background: rgb(255,255,255);
-	background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(253,187,45,1) 100%);
-	height: 100vh;
-}
-.home-info div{
-	padding:  1em;
-	width: 50%;
-}
-.home-info h1{
-	margin-bottom: 1em;
-	font-size: 2rem;
-	font-weight: 500;
-/* 	-webkit-text-fill-color: white; Will override color (regardless of order)
-	-webkit-text-stroke-width: 1px;
-	-webkit-text-stroke-color: black; */
-}
-.home-info div p{
-	line-height: 2em;
-}
-.home-info img{
-	height: 350px;
-	filter: drop-shadow(5px 5px);
+	
 }
